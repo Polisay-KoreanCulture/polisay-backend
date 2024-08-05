@@ -10,6 +10,6 @@ class Politician(Base):
     id = Column(Integer, primary_key=True, index=True)  # 고유 id
     name = Column(String(255), index=True)  # 의원명, VARCHAR 길이 지정
     birth_date = Column(Date)  # 생년월일, yy-mm-dd
-    political_score = Column(Float)  # 정치성향 점수, 실수형
+    political_score = Column(Float, nullable=True)  # 정치성향 점수, 실수형
     wordcloud_result = Column(JSON)  # 워드 클라우드 결과, JSON 형식
-    speech_count = Column(Integer)  # 발언횟수
+    speech_count = Column(Integer ,default=0)  # 발언횟수
