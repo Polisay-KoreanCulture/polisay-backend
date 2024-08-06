@@ -12,4 +12,10 @@ class Politician(Base):
     birth_date = Column(Date)  # 생년월일, yy-mm-dd
     political_score = Column(Float, nullable=True)  # 정치성향 점수, 실수형
     wordcloud_result = Column(JSON)  # 워드 클라우드 결과, JSON 형식
-    speech_count = Column(Integer ,default=0)  # 발언횟수
+    speech_count = Column(Integer ,default=0)  # 발언량
+
+class AllWordcloud(Base):
+    __tablename__ = "all_wordcloud"
+
+    term = Column(Integer, primary_key=True, index=True)
+    wordcloud_result = Column(JSON)

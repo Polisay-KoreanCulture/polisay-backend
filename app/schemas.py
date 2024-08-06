@@ -18,3 +18,10 @@ class Politician(PoliticianBase):
 
     class Config:
         orm_mode = True
+
+class AllWordcloud(BaseModel):
+    term: int
+    wordcloud_result: dict  # JSON 형식의 데이터를 dict로 정의
+
+    class Config:
+        orm_mode = True
